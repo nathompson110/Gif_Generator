@@ -1,7 +1,7 @@
 var dances= ["the carlton","the charleston","the bop","the cha cha", "breakdance","ballet","dougie","tap","capoeira","dab"];
 //styling js
 var count = 2
-$( document ).ready(function() {
+
 
 
 function blinking(){
@@ -65,34 +65,39 @@ blinkers;
       console.log(response.data[0]);
         for (var i = 0; i < response.data.length; i++) {
         var theUrl = response.data[i].images.fixed_height.url;
+         var theStill = response.data[i].images.fixed_height_still.url;
         var newDiv =$("<div>")
 
         var gifImage =$("<img>");
+        gifImage.addClass("dncImg");
         gifImage.attr("src", theUrl);
+        gifImage.attr("data-still", theStill)
+        gifImage.attr("data-animate", theUrl);
+
         var ratings =$("<div>");
         var theRating = response.data[i].rating;
+
         newDiv.append(gifImage);
         newDiv.append(ratings.html("Rating: " +theRating));
         $("#image-view").append(newDiv);
-        
-        
-
-        // $("#image-view").html("Rating:"+theRating)
-        
-        // $("#image-view").append(ratings);
-
-
-
-
-}
+      $(".dncImg").on("click", function() {
+      var state = $(this).attr("data-state");
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    });
+    }
     });
  
-}
+  }
    
 
     
-
-      // Function for displaying movie data
+$( document ).ready(function() {
      
       makeButtons()
       $("#add-dance").on("click", function(event) {
@@ -113,3 +118,14 @@ blinkers;
       });
 
       // });
+   
+
+  
+ 
+
+
+  
+     
+
+
+

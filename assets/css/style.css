@@ -5,3 +5,7 @@ img {width: 200px;
 .jumbotron {
 	text-align: center;
 }
+
+body{
+	max-height: 500px
+}
