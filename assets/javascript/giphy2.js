@@ -1,7 +1,37 @@
 var dances= ["the carlton","the charleston","the bop","the cha cha", "breakdance","ballet","dougie","tap","capoeira","dab"];
-    
+//styling js
+var count = 2
+$( document ).ready(function() {
 
-     
+
+function blinking(){
+
+if (count%5===0){
+  $("h1").css("color", "blue")
+}else if (count%5===1){
+  $("h1").css("color", "red");
+}else if (count%5===2){
+  $("h1").css("color", "green");
+}else if (count%5===3){
+  $("h1").css("color", "purple");
+}else{
+  $("h1").css("color", "yellow");
+}
+}
+
+
+
+var blinkers = setInterval(function(){
+  console.log(count++);
+  blinking();
+}, 500)
+
+blinkers;
+
+
+
+
+
 
 
   function makeButtons() {
@@ -76,6 +106,8 @@ var dances= ["the carlton","the charleston","the bop","the cha cha", "breakdance
       
       $(document).on("click", ".danceClass", gifsList);
 
+
       makeButtons();
+      });
 
       // });

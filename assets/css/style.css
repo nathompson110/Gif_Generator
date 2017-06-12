@@ -1,2 +1,8 @@
 img {width: 200px;
 }
+
+
+#buttons-view {
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
