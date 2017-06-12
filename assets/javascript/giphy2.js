@@ -7,15 +7,20 @@ $( document ).ready(function() {
 function blinking(){
 
 if (count%5===0){
-  $("h1").css("color", "blue")
+  $("h1").css("color", "blue");
+  $(".jumbotron").css("background-color","red")
 }else if (count%5===1){
   $("h1").css("color", "red");
+   $(".jumbotron").css("background-color","green")
 }else if (count%5===2){
   $("h1").css("color", "green");
+   $(".jumbotron").css("background-color","purple")
 }else if (count%5===3){
   $("h1").css("color", "purple");
+   $(".jumbotron").css("background-color","yellow")
 }else{
   $("h1").css("color", "yellow");
+   $(".jumbotron").css("background-color","blue")
 }
 }
 
