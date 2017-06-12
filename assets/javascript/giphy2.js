@@ -61,10 +61,7 @@ blinkers;
       url: queryURL,
       method: 'GET'
     }).done(function(response) {
-      // for (var i = 0; i < response.data.length; i++) {
-      //   console.log(response.data[i].rating);
-        // console.log(response.data[i].bitly_url);
-      // }
+
       console.log(response.data[0]);
         for (var i = 0; i < response.data.length; i++) {
         var theUrl = response.data[i].images.fixed_height.url;
