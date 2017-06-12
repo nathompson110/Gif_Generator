@@ -1,6 +1,6 @@
 var dances= ["the carlton","the charleston","the bop","the cha cha", "breakdance","ballet","dougie","tap","capoeira","dab"];
 //styling js
-var count = 2
+var count = 2;
 
 
 
@@ -20,6 +20,25 @@ if (count%5===0){
    $(".jumbotron").css("background-color","yellow")
 }else{
   $("h1").css("color", "yellow");
+   $(".jumbotron").css("background-color","blue")
+}
+}
+function colorChange(element){
+
+if (i%5===0){
+  $(element).css("color", "blue");
+  $(".jumbotron").css("background-color","red")
+}else if (i%5===1){
+  $(element).css("color", "red");
+   $(".jumbotron").css("background-color","green")
+}else if (i%5===2){
+  $(element).css("color", "green");
+   $(".jumbotron").css("background-color","purple")
+}else if (i%5===3){
+  $(element).css("color", "purple");
+   $(".jumbotron").css("background-color","yellow")
+}else{
+  $(element).css("color", "yellow");
    $(".jumbotron").css("background-color","blue")
 }
 }
@@ -73,10 +92,11 @@ blinkers;
         gifImage.attr("src", theUrl);
         gifImage.attr("data-still", theStill)
         gifImage.attr("data-animate", theUrl);
+         gifImage.attr("data-name", "img-"+i);
 
         var ratings =$("<div>");
         var theRating = response.data[i].rating;
-
+        newDiv.addClass("imgRating")  
         newDiv.append(gifImage);
         newDiv.append(ratings.html("Rating: " +theRating));
         $("#image-view").append(newDiv);

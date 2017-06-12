@@ -1,11 +1,40 @@
-img {width: 200px;
+#napolean{
+	/*float: right;*/
+	position: relative;
+	clear:both;
+	width:140px;
+}
+.imgRating {
+	 width: 40%;
+	 max-width: 100%
+    background: yellow;
+    margin-bottom: 10px;
+    float: left;
+    text-align: center;
+    border: 2px solid purple;
+    border-radius: 25px;
+    overflow:hidden;
 }
 
+.item:nth-child(odd) 
+{ clear: both; 
+}
+.danceClass{
+ 
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: purple;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-bottom: 15px;
+}
+}
 
 .jumbotron {
 	text-align: center;
 }
 
-body{
-	max-height: 500px
-}
