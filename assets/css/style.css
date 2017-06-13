@@ -1,8 +1,15 @@
+body {
+	background-image: url("../images/sparkle.jpg");
+	background-size: cover;
+	background-position: center; 
+}
+
 #napolean{
 	/*float: right;*/
 	position: relative;
 	clear:both;
 	width:140px;
+	 border-radius: 25px;
 }
 .imgRating {
 	 width: 40%;
@@ -32,6 +39,24 @@
   box-shadow: 0 9px #999;
   margin-bottom: 15px;
 }
+
+#label {
+	font-size:35px;
+	color:blue;
+
+}
+#add-dance {
+	font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 9px #999;
+  margin-bottom: 15px;
+
 }
 
 .jumbotron {

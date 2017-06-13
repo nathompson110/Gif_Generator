@@ -23,25 +23,25 @@ if (count%5===0){
    $(".jumbotron").css("background-color","blue")
 }
 }
-function colorChange(element){
+// function colorChange(element){
 
-if (i%5===0){
-  $(element).css("color", "blue");
-  $(".jumbotron").css("background-color","red")
-}else if (i%5===1){
-  $(element).css("color", "red");
-   $(".jumbotron").css("background-color","green")
-}else if (i%5===2){
-  $(element).css("color", "green");
-   $(".jumbotron").css("background-color","purple")
-}else if (i%5===3){
-  $(element).css("color", "purple");
-   $(".jumbotron").css("background-color","yellow")
-}else{
-  $(element).css("color", "yellow");
-   $(".jumbotron").css("background-color","blue")
-}
-}
+// if (i%5===0){
+//   $(element).css("color", "blue");
+//   $(".jumbotron").css("background-color","red")
+// }else if (i%5===1){
+//   $(element).css("color", "red");
+//    $(".jumbotron").css("background-color","green")
+// }else if (i%5===2){
+//   $(element).css("color", "green");
+//    $(".jumbotron").css("background-color","purple")
+// }else if (i%5===3){
+//   $(element).css("color", "purple");
+//    $(".jumbotron").css("background-color","yellow")
+// }else{
+//   $(element).css("color", "yellow");
+//    $(".jumbotron").css("background-color","blue")
+// }
+// }
 
 
 
@@ -74,7 +74,7 @@ blinkers;
   function gifsList() {
     $("#image-view").empty();
   var search = $(this).val();
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q="+search+"&api_key=dc6zaTOxFJmzC&limit=10";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q="+search+"&api_key=dc6zaTOxFJmzC&limit=10";
 
     $.ajax({
       url: queryURL,
@@ -92,7 +92,7 @@ blinkers;
         gifImage.attr("src", theUrl);
         gifImage.attr("data-still", theStill)
         gifImage.attr("data-animate", theUrl);
-         gifImage.attr("data-name", "img-"+i);
+         // gifImage.attr("data-name", "img-"+i);
 
         var ratings =$("<div>");
         var theRating = response.data[i].rating;
@@ -100,8 +100,16 @@ blinkers;
         newDiv.append(gifImage);
         newDiv.append(ratings.html("Rating: " +theRating));
         $("#image-view").append(newDiv);
-      $(".dncImg").on("click", function() {
-      var state = $(this).attr("data-state");
+      
+    
+    }
+  
+ 
+  });
+  }
+
+   function playPause(){
+  var state = $(this).attr("data-state");
       if (state === "still") {
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
@@ -109,13 +117,8 @@ blinkers;
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
       }
-    });
     }
-    });
- 
-  }
-   
-
+    
     
 $( document ).ready(function() {
      
@@ -132,6 +135,7 @@ $( document ).ready(function() {
 
       
       $(document).on("click", ".danceClass", gifsList);
+      $(document).on("click", ".dncImg", playPause);
 
 
       makeButtons();
