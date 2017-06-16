@@ -36,7 +36,6 @@ body {
   background-color: purple;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
   margin-bottom: 15px;
 }
 
@@ -54,7 +53,6 @@ body {
   background-color: red;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 9px #999;
   margin-bottom: 15px;
 
 }
